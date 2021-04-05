@@ -22,6 +22,12 @@ const StudentsModel = mongoose.model('Student', studentsSchema);
 // StudentsModel.create(shiwu);
 
 //2.修改学生信息
-StudentsModel.updateOne({name: 'shiwu'}, {age: 25, class: 15}, 
-  (err, res) => {if (err) console.log(err);
+// StudentsModel.updateOne({name: 'shiwu'}, {age: 25, class: 15}, 
+//   (err, res) => {if (err) console.log(err);
+// });
+
+//3.删除创建的学生
+StudentsModel.deleteOne({name: 'shiwu'}, (err) => {
+  if (err) {console.log(err);}
+  else {console.log('已删除');}
 });
