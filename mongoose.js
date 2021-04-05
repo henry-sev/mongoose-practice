@@ -18,5 +18,10 @@ const studentsSchema = new mongoose.Schema({
 const StudentsModel = mongoose.model('Student', studentsSchema);
 
 //1.新建一个学生信息
-const shiwu = {name: 'shiwu', number: 22, class: 14, gender: 'male', age: 18};
-StudentsModel.create(shiwu);
+// const shiwu = {name: 'shiwu', number: 22, class: 14, gender: 'male', age: 18};
+// StudentsModel.create(shiwu);
+
+//2.修改学生信息
+StudentsModel.updateOne({name: 'shiwu'}, {age: 25, class: 15}, 
+  (err, res) => {if (err) console.log(err);
+});
